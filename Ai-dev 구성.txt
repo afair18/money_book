@@ -1,0 +1,17 @@
+1. .gitignore 추가
+.gitignore
+.env
+.md
+
+2. plan.md (기획서)
+   db.md (DB 구조)
+
+3. cursorrules.yaml (위의 내용 추가)
+
+4. AI-Dev 
+- 기획 (플레이그라운드)
+- 디자인 (streamlit 디자이너)
+- DB 생성 (DB 구조 + supabase DB생성 파이썬 파일)
+- 프로그래밍 (디자인+프로그래밍)
+- 내보내기 (1,2,3,main.py zip 으로 다운로드)
+
