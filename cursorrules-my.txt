@@ -1,0 +1,60 @@
+#사용언어
+-python
+-streamlit
+-tailwindcss
+-langchain
+-serperapi
+-openai
+-dotenv
+-supabaseapi
+-fontaswome
+
+#데이터베이스
+-supabase
+
+#버전관리
+-git
+
+# 폴더 구조
+- .env
+- config.py
+- main.py
+## doc (폴더)
+- menu.md
+- design.md
+- workflow.md
+## images (폴더)
+
+*** .env (중요 환경변수) ***
+DATABASE_URL=postgresql://user:password@localhost/dbname
+SECRET_KEY=your_secret_key
+DEBUG=True
+SERPERAPI_SECRET=your_serperapi_secret_key
+
+*** config.py (env 파일 로드) ***
+from dotenv import load_dotenv
+import os
+
+# .env 파일 로드 (한 번만 수행)
+load_dotenv()
+
+# 환경 변수
+DATABASE_URL = os.getenv("DATABASE_URL")
+SECRET_KEY = os.getenv("SECRET_KEY")
+DEBUG = os.getenv("DEBUG") == "True"
+SERPERAPI_SECRET = os.getenv("SERPERAPI_SECRET")
+
+# 유효성 검사 (옵션)
+if not all([DATABASE_URL, SECRET_KEY, SERPERAPI_SECRET]):
+    raise ValueError("Some essential environment variables are missing.")
+
+*** main.py (실제 사용) ***
+import config
+
+def main():
+    print("Database URL:", config.DATABASE_URL)
+    print("Secret Key:", config.SECRET_KEY)
+if __name__ == "__main__":
+    main()
+
+

@@ -1,0 +1,82 @@
+# Cursorrules.yaml
+
+# 1. 사용 언어
+language: Python 3.9
+
+# 2. 참조 라이브러리
+dependencies:
+  - Flask 2.2.3
+  - SQLAlchemy 1.4
+  - bcrypt 3.2.0
+  - JWT 2.0.1
+
+# 3. 사용 DB
+database:
+  type: MySQL
+  host: localhost
+  port: 3306
+  username: root
+  password: example
+  database_name: cursor_project
+
+# 4. 폴더 구조
+directory_structure:
+  - /app
+    - __init__.py
+    - models/
+    - routes/
+    - controllers/
+  - /config
+  - /static
+  - /templates
+  - /tests
+
+# 5. 로그인
+authentication:
+  method: JWT (JSON Web Token)
+  token_expiration: 1h
+  hashing_algorithm: bcrypt
+
+# 6. API 명세
+api_documentation:
+  - /api/v1/login: POST
+  - /api/v1/register: POST
+  - /api/v1/data: GET
+
+# 7. 배포 정보
+deployment:
+  platform: AWS EC2
+  server: Nginx
+  domain: example.com
+
+# 8. 보안 정책
+security:
+  - HTTPS enforced
+  - Data encryption enabled
+  - Regular security audits
+
+# 9. 에러 처리
+error_handling:
+  strategy: Custom middleware
+  error_logging: enabled
+  log_location: /logs/error.log
+
+# 10. 테스트
+testing:
+  unit_tests: pytest
+  integration_tests: enabled
+
+# 11. 버전 관리
+version_control:
+  repository: https://github.com/user/project
+  branch_policy: main -> dev -> feature
+
+# 12. 유지보수 계획
+maintenance:
+  updates: Monthly
+  critical_bug_fixes: Immediate
+
+# 13. 주의사항
+notes:
+  - Do not expose environment variables publicly.
+  - Always use virtual environments for dependencies.
